@@ -1,0 +1,17 @@
+.thumbnail img {
+    width: 100%;
+}
+
+/*利用padding為0，讓image跟thumbnail無空隙 */
+
+.thumbnail{
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+
+.delete-form  {
+    display: inline;    
+}
