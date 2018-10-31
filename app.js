@@ -17,8 +17,12 @@ var commentRoutes     = require("./routes/comments"),
     campgroundsRoutes = require("./routes/campgrounds"),
     indexRoutes        = require("./routes/index");
 
-// mongoose.connect("mongodb://localhost/yelp_camp_v12" , {useNewUrlParser: true});
-mongoose.connect("mongodb://chia:test1234@ds143603.mlab.com:43603/chiayelpcamp" , {useNewUrlParser: true});
+mongoose.connect(process.env.DATABASEURL , {useNewUrlParser: true});
+//might have to create environment variable each time restart server
+// $ export DATABASEURL=mongodb://localhost/yelp_camp_v12
+
+// mongoose.connect("mongodb://chia:test1234@ds143603.mlab.com:43603/chiayelpcamp" , {useNewUrlParser: true});
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine" , "ejs");
 app.use(express.static(__dirname + "/public")); //__dirname表示目前的工作區域 __dirname => /home/ubuntu/workspace/YelpCamp/v10 // public前面記得有底線!!!!!!!!!!!前提是有 __dirname的話
